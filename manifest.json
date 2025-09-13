@@ -1,0 +1,16 @@
+{
+  "name": "My To-Do List App",
+  "short_name": "To-Do List",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#153677",
+  "theme_color": "#153677",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/icon-512.jpg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
