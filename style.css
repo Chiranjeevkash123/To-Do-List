@@ -56,7 +56,7 @@ button {
     border-radius: 40px;
 }
 
-/* --- LIST ITEM STYLES --- */
+/* --- LIST ITEM AND BUTTON STYLES --- */
 
 ul li {
     list-style: none;
@@ -67,11 +67,11 @@ ul li {
     position: relative;
     display: flex;
     align-items: center;
-    padding-right: 90px;
     background: #fdfdfd;
     border-radius: 5px;
     border: 1px solid #edeef0;
 }
+
 ul li::before {
     content: '';
     position: absolute;
@@ -86,44 +86,42 @@ ul li::before {
     left: 8px;
     cursor: pointer;
 }
-ul li.checked {
-    color: #555;
-    text-decoration: line-through;
-}
+
 ul li.checked::before {
     background-image: url("images/checked.png");
 }
 
-.drag-handle {
-    font-size: 20px;
-    color: #c4c4c4;
-    cursor: grab;
-    margin-right: 15px;
+/* This rule correctly applies the strikethrough ONLY to the text */
+ul li.checked .task-text {
+    color: #555;
+    text-decoration: line-through;
 }
 
 .task-text {
-    flex-grow: 1;
+    flex-grow: 1; /* Pushes all buttons to the right */
+    margin-right: 10px; /* Adds space between text and buttons */
 }
 
-.edit-btn, .delete-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+/* Common style for all action icons */
+.drag-handle, .edit-btn, .delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 40px;
     width: 40px;
     font-size: 22px;
     color: #555;
-    line-height: 40px;
-    text-align: center;
     border-radius: 50%;
     cursor: pointer;
+    flex-shrink: 0; /* Prevents buttons from shrinking */
 }
-.edit-btn:hover, .delete-btn:hover {
+
+.drag-handle {
+    font-size: 24px;
+    color: #c4c4c4;
+    cursor: grab;
+}
+
+.edit-btn:hover, .delete-btn:hover, .drag-handle:hover {
     background: #edeef0;
-}
-.edit-btn {
-    right: 40px;
-}
-.delete-btn {
-    right: 0px;
 }

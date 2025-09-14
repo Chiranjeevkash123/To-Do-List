@@ -1,31 +1,66 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 
+// function addtask() {
+//     if (inputBox.value === '') {
+//         alert("You must write something!");
+//     } else {
+//         let li = document.createElement("li");
+
+//         // Create the drag handle
+//         let handle = document.createElement("span");
+//         handle.className = "drag-handle";
+//         handle.innerHTML = "&#9776;"; // Grip icon (≡)
+//         li.appendChild(handle);
+
+//         // Create a span for the task text
+//         let textSpan = document.createElement("span");
+//         textSpan.className = "task-text";
+//         textSpan.innerHTML = inputBox.value;
+//         li.appendChild(textSpan);
+        
+//         // Create the edit button
+//         let editSpan = document.createElement("span");
+//         editSpan.innerHTML = "\u270E"; // Pencil icon
+//         editSpan.className = "edit-btn";
+//         li.appendChild(editSpan);
+
+//         // Create the delete button
+//         let deleteSpan = document.createElement("span");
+//         deleteSpan.className = "delete-btn";
+//         deleteSpan.innerHTML = "\u00d7";
+//         li.appendChild(deleteSpan);
+
+//         listContainer.appendChild(li);
+//     }
+//     inputBox.value = "";
+//     saveData();
+// }
 function addtask() {
     if (inputBox.value === '') {
         alert("You must write something!");
     } else {
         let li = document.createElement("li");
 
-        // Create the drag handle
-        let handle = document.createElement("span");
-        handle.className = "drag-handle";
-        handle.innerHTML = "&#9776;"; // Grip icon (≡)
-        li.appendChild(handle);
-
-        // Create a span for the task text
+        // 1. Add the text span first
         let textSpan = document.createElement("span");
         textSpan.className = "task-text";
         textSpan.innerHTML = inputBox.value;
         li.appendChild(textSpan);
+
+        // 2. Add the drag handle (now on the right)
+        let handle = document.createElement("span");
+        handle.className = "drag-handle";
+        handle.innerHTML = "&#9776;"; // Grip icon (≡)
+        li.appendChild(handle);
         
-        // Create the edit button
+        // 3. Add the edit button
         let editSpan = document.createElement("span");
         editSpan.innerHTML = "\u270E"; // Pencil icon
         editSpan.className = "edit-btn";
         li.appendChild(editSpan);
 
-        // Create the delete button
+        // 4. Add the delete button
         let deleteSpan = document.createElement("span");
         deleteSpan.className = "delete-btn";
         deleteSpan.innerHTML = "\u00d7";
