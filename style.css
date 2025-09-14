@@ -1,18 +1,16 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-
-.container{
+.container {
     width: 100%;
-    min-height : 100vh;
+    min-height: 100vh;
     background: linear-gradient(135deg, #153677, #4e085f);
     padding: 10px;
 }
-
-.Todo-app{
+.Todo-app {
     width: 100%;
     max-width: 540px;
     background: #fff;
@@ -20,20 +18,17 @@
     padding: 40px 30px 70px;
     border-radius: 10px;
 }
-
-.Todo-app h2{
+.Todo-app h2 {
     color: #002765;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
-
-.Todo-app h2 img{
+.Todo-app h2 img {
     width: 30px;
     margin-left: 10px;
 }
-
-.row{
+.row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -42,8 +37,7 @@
     padding-left: 20px;
     margin-bottom: 25px;
 }
-
-input{
+input {
     flex: 1;
     border: none;
     outline: none;
@@ -51,8 +45,7 @@ input{
     padding: 10px;
     font-weight: 14px;
 }
-
-button{
+button {
     border: none;
     outline: none;
     background: #ff5945;
@@ -63,16 +56,23 @@ button{
     border-radius: 40px;
 }
 
-ul li{
+/* --- LIST ITEM STYLES --- */
+
+ul li {
     list-style: none;
-    padding: 12px 8px 12px 50px;
     font-size: 17px;
     user-select: none;
-    cursor: pointer;
+    padding: 12px 8px 12px 50px;
+    margin-bottom: 8px;
     position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 90px;
+    background: #fdfdfd;
+    border-radius: 5px;
+    border: 1px solid #edeef0;
 }
-
-ul li::before{
+ul li::before {
     content: '';
     position: absolute;
     height: 28px;
@@ -81,33 +81,49 @@ ul li::before{
     background-image: url("images/unchecked.png");
     background-size: cover;
     background-position: center;
-    top: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     left: 8px;
+    cursor: pointer;
 }
-
-/* This is the new CSS code */
 ul li.checked {
     color: #555;
     text-decoration: line-through;
 }
-
 ul li.checked::before {
     background-image: url("images/checked.png");
 }
 
-ul li span{
+.drag-handle {
+    font-size: 20px;
+    color: #c4c4c4;
+    cursor: grab;
+    margin-right: 15px;
+}
+
+.task-text {
+    flex-grow: 1;
+}
+
+.edit-btn, .delete-btn {
     position: absolute;
-    right: 0;
-    top: 5px;
+    top: 50%;
+    transform: translateY(-50%);
     height: 40px;
     width: 40px;
     font-size: 22px;
     color: #555;
     line-height: 40px;
     text-align: center;
-}
-ul li span:hover{
-    /* background: #ff5945; */
-    background: #edeef0;
     border-radius: 50%;
+    cursor: pointer;
+}
+.edit-btn:hover, .delete-btn:hover {
+    background: #edeef0;
+}
+.edit-btn {
+    right: 40px;
+}
+.delete-btn {
+    right: 0px;
 }
