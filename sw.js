@@ -10,8 +10,7 @@ const FILES_TO_CACHE = [
   'images/icon-512.jpg'
 ];
 
-const CACHE_NAME = 'todo-list-cache-v1';
-
+const CACHE_NAME = 'todo-list-cache-v2'; // Changed v1 to v2
 // On install, cache the files
 self.addEventListener('install', (evt) => {
   evt.waitUntil(
